@@ -15,7 +15,7 @@ mobile.
 ---
 
 ## 🚀 Live Demo
-Coming soon — [falktrack.com](https://falktrack.com)
+🚧 In Development — [falktrack.com](https://falktrack.com)
 
 ---
 
@@ -81,19 +81,21 @@ The application uses 9 tables in a multi-tenant PostgreSQL database:
 
 ## 📁 Project Documents
 
-- [Project Proposal](FalkTrack_Proposal.docx)
+- [Project Proposal](FalkTrack_Proposal_v3_1.docx)
 - [Frontend Flow Diagram](diagrams/FalkTrack_Flow_Diagram.png)
 
 ---
 
 ## 🗓️ Development Roadmap
 
-- [x] Project Proposal (Step 2)
+- [x] Project Proposal (Step 2) — revised to v3
 - [x] Frontend Flow Diagram (Step 3)
 - [ ] Backend Setup & Database
-- [ ] Frontend Build
-- [ ] API Integration
-- [ ] Testing & Deployment
+- [ ] Frontend Build — React + Tailwind CSS
+- [ ] Supabase Integration
+- [ ] Cloudinary Media Upload
+- [ ] Deployment (Vercel + Railway)
+- [ ] V2 Roadmap — Inspections, Notifications, PDF Export, QR Codes
 
 ---
 
