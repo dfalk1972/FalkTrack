@@ -58,3 +58,122 @@
   background-color: var(--color-indigo);
   text-decoration: none;
 }
+
+/* ── Hero ─────────────────────────────────────────── */
+
+.hero {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.heroBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-purple);
+  margin-bottom: 1rem;
+}
+
+.heroHeadline {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.heroSubtext {
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.7;
+  max-width: 28rem;
+  margin-bottom: 2rem;
+}
+
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.buttonPrimary {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--color-indigo);
+  text-decoration: none;
+}
+
+.buttonOutline {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-indigo);
+  background-color: transparent;
+  border: 2px solid var(--color-indigo);
+  text-decoration: none;
+}
+
+.heroMascot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mascotLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.mascotCard {
+  width: 100%;
+  min-height: 280px;
+  border-radius: 1rem;
+  border: 2px dashed var(--color-gold);
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem;
+  gap: 0.5rem;
+  color: #9ca3af;
+}
+
+.mascotCaption {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-top: 0.75rem;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .heroHeadline {
+    font-size: 2.5rem;
+  }
+}
