@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Clock, Wrench, Smartphone } from "lucide-react";
 import Paw from "../../components/Paw/Paw";
 import styles from "./Home.module.css";
 
@@ -17,6 +18,27 @@ const steps = [
     number: "3",
     title: "Track it",
     body: "Every piece of equipment's maintenance history is right there — last service, next one due.",
+  },
+];
+
+const features = [
+  {
+    icon: Clock,
+    title: "Jobs & Time",
+    body: "Build jobs from templates, assign the work, and track hours without a single spreadsheet.",
+    accentColor: "var(--color-indigo)",
+  },
+  {
+    icon: Wrench,
+    title: "Assets & Maintenance",
+    body: "A complete maintenance log for every piece of equipment you own, with photos attached.",
+    accentColor: "var(--color-orange)",
+  },
+  {
+    icon: Smartphone,
+    title: "Built for the Field",
+    body: "Big buttons, simple screens — works on the phone already in your pocket.",
+    accentColor: "var(--color-purple)",
   },
 ];
 export default function Home() {
@@ -89,6 +111,28 @@ export default function Home() {
                   <p className={styles.stepBody}>{step.body}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+        <section className={styles.features}>
+          <div className={styles.featuresInner}>
+            <h2 className={styles.sectionHeading}>Features</h2>
+            <div className={styles.featuresGrid}>
+              {features.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={feature.title} className={styles.featureCard}>
+                    <div
+                      className={styles.featureIconWrap}
+                      style={{ borderTopColor: feature.accentColor }}
+                    >
+                      <Icon size={28} color={feature.accentColor} />
+                    </div>
+                    <h3 className={styles.featureTitle}>{feature.title}</h3>
+                    <p className={styles.featureIconBody}>{feature.body}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
