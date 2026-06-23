@@ -2,48 +2,39 @@
 
 ## Current Status
 
-_Last updated: 2026-06-21_
+_Last updated: 2026-06-22_
 
 **Done:**
 
-- Repo cloned and merged with Vite scaffold (existing docs preserved)
-- `dev` branch created — all build work happens here
-- DECISIONS.md and PROGRESS.md tracking choices and progress
-- React Router set up — Home route rendering and confirmed working
-- Global design tokens (colors, fonts) defined as CSS custom properties
-  in index.css
-- Home page nav/header built: logo with a reusable Paw icon component,
-  Log in / Sign up links (routes not built yet, will dead-end for now)
+- Full project scaffold, routing, global CSS tokens
+- Home page nav/header with reusable Paw component
+- How It Works section with array/map pattern
+- Features section JSX complete (needs CSS styling)
+- Learned: lucide-react icon imports, undefined property
+  names fail silently in JavaScript, when to use inline
+  styles vs CSS classes
 
 **Next:**
 
-- Build the hero section of the Home page (headline, subtext, CTA
-  buttons, mascot placeholder)
-- Then How It Works, Features, CTA banner, and Footer sections
-- Eventually: real Login and Signup pages so the nav links resolve
-
-**Done:**
-
-- Cloned the FalkTrack repo locally (existing README, proposal doc, and
-  diagrams preserved)
-- Scaffolded Vite + React, merged it into the repo without touching
-  existing files
-- `npm install` complete — 135 packages, 0 vulnerabilities
-- Created a `dev` branch — all build work happens here, per the
-  capstone submission instructions (PR from dev into main at the end,
-  not merged)
-- Created DECISIONS.md to track the reasoning behind technical choices
-- First commit pushed to the `dev` branch on GitHub
-
-**Next:**
-
-- Walk through what's actually inside `src/` (understand the scaffold
-  before adding to it)
-- Build and style the Home page using CSS Modules
+- Style the Features section (featuresGrid, featureCard,
+  featureIconWrap)
+- CTA banner section
+- Footer section
+- Commit and call the Home page done
 
 ---
 
 ## Session Log
+
+### 2026-06-22 — Home page: How It Works and Features sections
+
+Built How It Works using the array/map pattern for the first time.
+Built Features section with lucide-react icons stored directly in
+the data array as components. Hit a real bug: property named
+`iconName` in the array but accessed as `feature.Icon` in the map
+— JavaScript returned undefined silently, React blew up on render.
+Fixed by renaming the property to `Icon` to match. Rule learned:
+typos in object property names fail silently in JavaScript.
 
 ### 2026-06-21 — Home page: nav/header section
 
