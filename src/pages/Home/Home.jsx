@@ -2,6 +2,23 @@ import { Link } from "react-router-dom";
 import Paw from "../../components/Paw/Paw";
 import styles from "./Home.module.css";
 
+const steps = [
+  {
+    number: "1",
+    title: "Tap in",
+    body: "A worker starts a timer with one tap from the job site. No paperwork, no separate stopwatch.",
+  },
+  {
+    number: "2",
+    title: "Log it",
+    body: "Snap a photo, add a note, mark the job complete. FalkTrack adds up the hours automatically.",
+  },
+  {
+    number: "3",
+    title: "Track it",
+    body: "Every piece of equipment's maintenance history is right there — last service, next one due.",
+  },
+];
 export default function Home() {
   return (
     <div>
@@ -54,6 +71,25 @@ export default function Home() {
             <p className={styles.mascotCaption}>
               Chief Retrieval Officers, FalkTrack
             </p>
+          </div>
+        </section>
+        <section className={styles.howItWorks}>
+          <div className={styles.howItWorksInner}>
+            <h2 className={styles.sectionHeading}>How it works</h2>
+            <p className={styles.sectionSubtext}>
+              Three steps, built around the way field crews actually work.
+            </p>
+            <div className={styles.steps}>
+              {steps.map((step) => (
+                <div key={step.number} className={styles.step}>
+                  <div className={styles.stepIcon}>
+                    <span className={styles.stepNumber}>{step.number}</span>
+                  </div>
+                  <h3 className={styles.stepTitle}>{step.title}</h3>
+                  <p className={styles.stepBody}>{step.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
