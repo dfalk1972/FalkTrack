@@ -2,29 +2,47 @@
 
 ## Current Status
 
-_Last updated: 2026-06-22_
+_Last updated: 2026-06-24_
 
 **Done:**
 
 - Full project scaffold, routing, global CSS tokens
-- Home page nav/header with reusable Paw component
-- How It Works section with array/map pattern
-- Features section JSX complete (needs CSS styling)
-- Learned: lucide-react icon imports, undefined property
-  names fail silently in JavaScript, when to use inline
-  styles vs CSS classes
+- Home page complete:
+  - Nav/header with reusable Paw component
+  - Hero section with dog photo and CTA buttons
+  - How It Works section (array/map pattern)
+  - Features section with lucide icons and dynamic accent colors
+  - CTA banner
+  - Footer
 
 **Next:**
 
-- Style the Features section (featuresGrid, featureCard,
-  featureIconWrap)
-- CTA banner section
-- Footer section
-- Commit and call the Home page done
-
----
+- Login page
+- Signup page
+- Dashboard (placeholder for now)
+- Begin wiring up the real app screens per the flow diagram
 
 ## Session Log
+
+### 2026-06-24 — Home page complete
+
+Built and styled the full Home page. Sections completed: nav/header,
+hero with real dog photo, How It Works (first use of array/map
+pattern), Features with lucide-react icons and dynamic accent colors
+via inline styles, CTA banner, and footer.
+
+Key things learned this session:
+
+- CSS custom properties (var()) don't resolve inside JavaScript
+  inline style objects — use raw hex values there instead
+- Inline styles override CSS class properties for the same rule,
+  but only if the style prop is on the correct element
+- Object property name typos fail silently in JavaScript (iconName
+  vs Icon bug from last session)
+- box-shadow works best on contained card elements, not full-width
+  sections
+- object-fit: cover fills a container with an image without
+  stretching it
 
 ### 2026-06-22 — Home page: How It Works and Features sections
 
