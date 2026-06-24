@@ -27,19 +27,19 @@ const features = [
     icon: Clock,
     title: "Jobs & Time",
     body: "Build jobs from templates, assign the work, and track hours without a single spreadsheet.",
-    accentColor: "var(--color-indigo)",
+    accentColor: "#1E20C9",
   },
   {
     icon: Wrench,
     title: "Assets & Maintenance",
     body: "A complete maintenance log for every piece of equipment you own, with photos attached.",
-    accentColor: "var(--color-orange)",
+    accentColor: "#1E20C9",
   },
   {
     icon: Smartphone,
     title: "Built for the Field",
     body: "Big buttons, simple screens — works on the phone already in your pocket.",
-    accentColor: "var(--color-purple)",
+    accentColor: "#1E20C9",
   },
 ];
 export default function Home() {
@@ -125,11 +125,12 @@ export default function Home() {
               {features.map((feature) => {
                 const Icon = feature.icon;
                 return (
-                  <div key={feature.title} className={styles.featureCard}>
-                    <div
-                      className={styles.featureIconWrap}
-                      style={{ borderTopColor: feature.accentColor }}
-                    >
+                  <div
+                    key={feature.title}
+                    className={styles.featureCard}
+                    style={{ borderTopColor: feature.accentColor }}
+                  >
+                    <div className={styles.featureIconWrap}>
                       <Icon size={28} color={feature.accentColor} />
                     </div>
                     <h3 className={styles.featureTitle}>{feature.title}</h3>
