@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Clock, Wrench, Smartphone } from "lucide-react";
 import Paw from "../../components/Paw/Paw";
+import dogsPhoto from "../../assets/Dogs.jpg";
 import styles from "./Home.module.css";
 
 const steps = [
@@ -87,8 +88,11 @@ export default function Home() {
           <div className={styles.heroMascot}>
             <p className={styles.mascotLabel}>Meet the crew</p>
             <div className={styles.mascotCard}>
-              <p>📸 Photo goes here</p>
-              <p>Swap this for a photo of your two Labs</p>
+              <img
+                src={dogsPhoto}
+                alt="Two yellow Labs — the FalkTrack mascots"
+                className={styles.mascotPhoto}
+              />
             </div>
             <p className={styles.mascotCaption}>
               Chief Retrieval Officers, FalkTrack
