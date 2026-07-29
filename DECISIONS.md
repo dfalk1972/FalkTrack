@@ -44,3 +44,40 @@ demonstrates core CSS skills rather than relying on a utility framework.
 
 **Revisit if:** the rubric specifically asks for Tailwind or
 utility-first CSS once it's fully available.
+
+## 2026-07-29 — Database: Relational vs Document, and Multi-Tenancy
+
+### Why PostgreSQL (Supabase) over MongoDB
+
+FalkTrack's data is highly structured and deeply relational — jobs
+have time entries, assets have maintenance records, everything traces
+back to a company. PostgreSQL enforces those connections at the
+database level with foreign keys, meaning bad data can't exist.
+MongoDB leaves that enforcement to application code, which means one
+bug can corrupt real business data permanently. For a product
+handling real employee hours and equipment records, data integrity
+is non-negotiable.
+
+### Multi-Tenancy
+
+FalkTrack is multi-tenant — multiple companies share one app but
+each sees only their own data. Company is the top of the entire
+data hierarchy. Everything flows down from it.
+
+**Directly connected to company (stores company_id):**
+
+- users
+- job_templates
+- jobs
+- assets
+
+**Indirectly connected through another table:**
+
+- time_entries → jobs → company
+- job_media → jobs → company
+- maintenance_records → assets → company
+- maintenance_media → maintenance_records → company
+
+**user_id on lower tables is not ownership — it is accountability.**
+It tracks who logged the time entry, who uploaded the photo, who
+recorded the maintenance. The data still belongs to the company.
