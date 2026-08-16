@@ -2,7 +2,27 @@
 
 ## Current Status
 
-_Last updated: 2026-06-24_
+*Last updated: 2026-07-31*
+
+**Done:**
+- Full project scaffold, routing, global CSS tokens
+- Home page complete (nav, hero with dog photo, how it works,
+  features, CTA banner, footer)
+- DECISIONS.md and PROGRESS.md tracking choices and reasoning
+- Proposal scaled back to v4 — 6 tables, ~39 hour scope,
+  stretch goals moved to Section 8 V2 roadmap
+- Multi-tenancy and relational database concepts documented
+  in DECISIONS.md
+
+**Next:**
+- Step 4: Database diagram — draw the 6 tables and their
+  relationships (ERD)
+- Step 4 submission to mentor
+- Login and Signup pages (controlled forms in React)
+- Supabase project setup and schema migration
+
+
+### 2026-06-24_
 
 **Done:**
 
@@ -72,3 +92,4 @@ Cloned the existing repo, scaffolded Vite + React into a temp folder
 and merged the generated files in cleanly, installed dependencies,
 created a `dev` branch for all build work, added DECISIONS.md, and
 pushed the first commit. Repo is ready for actual component code.
+
