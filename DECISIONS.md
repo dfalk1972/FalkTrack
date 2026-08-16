@@ -5,6 +5,40 @@ chosen, what was considered, and why. Newest entries at the top.
 
 ---
 
+## 2026-07-31 — Deployment: Render over Railway for backend
+
+**Decision:** Use Render instead of Railway for hosting the
+Express backend.
+
+**Why:** Render is explicitly named in the rubric, has a
+reliable free tier, and is one less unknown to manage. Railway
+has become less generous with free tiers recently.
+
+---
+
+## 2026-07-31 — Backend: Keep Express as separate server
+
+**Decision:** Maintain a separate Express backend rather than
+calling Supabase directly from React.
+
+**Why:** The rubric explicitly requires a controller layer
+between the frontend and database. Express provides that —
+routes, validation, and Supabase credentials all live server-
+side, never exposed to the browser. Architecture is:
+React (Vercel) → Express (Render) → Supabase (PostgreSQL).
+
+---
+
+## 2026-07-31 — File storage: Supabase Storage over Cloudinary
+
+**Decision:** Use Supabase Storage for the one photo per
+maintenance record instead of Cloudinary.
+
+**Why:** Supabase Storage is already part of the stack, one
+less third-party service to configure and manage, and simpler
+for a single photo use case. Cloudinary makes more sense at
+higher photo/video volume (V2 roadmap).
+
 ## 2026-06-21 — Git workflow: dev branch for active build, PR into main at submission
 
 **Decision:** All Step 6 build work happens on a `dev` branch. `main`
@@ -67,17 +101,10 @@ data hierarchy. Everything flows down from it.
 **Directly connected to company (stores company_id):**
 
 - users
-- job_templates
 - jobs
 - assets
 
 **Indirectly connected through another table:**
 
 - time_entries → jobs → company
-- job_media → jobs → company
 - maintenance_records → assets → company
-- maintenance_media → maintenance_records → company
-
-**user_id on lower tables is not ownership — it is accountability.**
-It tracks who logged the time entry, who uploaded the photo, who
-recorded the maintenance. The data still belongs to the company.
