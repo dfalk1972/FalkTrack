@@ -2,9 +2,10 @@
 
 ## Current Status
 
-*Last updated: 2026-07-31*
+_Last updated: 2026-08-16_
 
 **Done:**
+
 - Full project scaffold, routing, global CSS tokens
 - Home page complete (nav, hero with dog photo, how it works,
   features, CTA banner, footer)
@@ -13,36 +14,30 @@
   stretch goals moved to Section 8 V2 roadmap
 - Multi-tenancy and relational database concepts documented
   in DECISIONS.md
+- Stack finalized against rubric — Render over Railway,
+  Supabase Storage over Cloudinary
+- DECISIONS.md updated to reflect v4 six-table schema
 
 **Next:**
-- Step 4: Database diagram — draw the 6 tables and their
-  relationships (ERD)
-- Step 4 submission to mentor
-- Login and Signup pages (controlled forms in React)
+
+- Step 4: Database ERD diagram (6 tables)
+- Login and Signup pages
 - Supabase project setup and schema migration
+- Express backend scaffold
 
-
-### 2026-06-24_
-
-**Done:**
-
-- Full project scaffold, routing, global CSS tokens
-- Home page complete:
-  - Nav/header with reusable Paw component
-  - Hero section with dog photo and CTA buttons
-  - How It Works section (array/map pattern)
-  - Features section with lucide icons and dynamic accent colors
-  - CTA banner
-  - Footer
-
-**Next:**
-
-- Login page
-- Signup page
-- Dashboard (placeholder for now)
-- Begin wiring up the real app screens per the flow diagram
+---
 
 ## Session Log
+
+_(newest at top)_
+
+### 2026-08-16 — Stack finalized, docs cleaned up
+
+Confirmed final stack against rubric with mentor feedback.
+Swapped Railway for Render, Cloudinary for Supabase Storage.
+Updated DECISIONS.md multi-tenancy section to match v4
+six-table schema. Cleaned up PROGRESS.md. Ready for database
+ERD and backend build.
 
 ### 2026-06-24 — Home page complete
 
@@ -92,4 +87,3 @@ Cloned the existing repo, scaffolded Vite + React into a temp folder
 and merged the generated files in cleanly, installed dependencies,
 created a `dev` branch for all build work, added DECISIONS.md, and
 pushed the first commit. Repo is ready for actual component code.
-
