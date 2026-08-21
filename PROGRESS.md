@@ -2,7 +2,20 @@
 
 ## Current Status
 
-_Last updated: 2026-08-16_
+_Last updated: 2026-08-20_
+
+**Done:**
+
+- Home page, docs, stack finalized (see above)
+- Step 4: Database ERD diagram created and committed
+
+**Next:**
+
+- Supabase project setup (in progress — project created,
+  password saved in Bitwarden)
+- Run 6-table schema SQL
+- Express backend scaffold
+- Auth: Login, Signup, Pending screen
 
 **Done:**
 
