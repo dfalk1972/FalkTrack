@@ -1,0 +1,55 @@
+.container {
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.meta {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.form {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.form input {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dateLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 0.15rem;
+}
+
+.form button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: #b00020;
+}
+
+.recordList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.recordCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}

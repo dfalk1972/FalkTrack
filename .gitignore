@@ -24,3 +24,7 @@ dist-ssr
 *.sln
 *.sw?
 
+# Windows/WSL zone-identifier files (created when a file crosses from
+# Windows into WSL, e.g. downloaded or dragged in) - not real project
+# files, safe to ignore everywhere.
+*:Zone.Identifier

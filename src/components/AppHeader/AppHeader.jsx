@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import styles from "./AppHeader.module.css";
 
-// Simple shared header for logged-in pages (Jobs, Job Detail, and later
-// Assets/Admin). Home.jsx has its own marketing nav and isn't touched by
-// this - this one's only for pages wrapped in ProtectedRoute.
+// Simple shared header for logged-in pages (Jobs, Job Detail, Assets,
+// Asset Detail, and later the Admin Panel). Home.jsx has its own
+// marketing nav and isn't touched by this.
 export default function AppHeader() {
   const { logout } = useAuth();
 
@@ -15,6 +15,7 @@ export default function AppHeader() {
       </Link>
       <nav className={styles.nav}>
         <Link to="/jobs">Jobs</Link>
+        <Link to="/assets">Assets</Link>
         <button onClick={logout} className={styles.logoutButton}>
           Log Out
         </button>

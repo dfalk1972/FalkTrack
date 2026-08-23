@@ -5,6 +5,8 @@ import Signup from "./pages/Signup/Signup";
 import Pending from "./pages/Pending/Pending";
 import Jobs from "./pages/Jobs/Jobs";
 import JobDetail from "./pages/JobDetail/JobDetail";
+import Assets from "./pages/Assets/Assets";
+import AssetDetail from "./pages/AssetDetail/AssetDetail";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 
@@ -30,6 +32,22 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <JobDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/assets"
+            element={
+              <ProtectedRoute>
+                <Assets />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/assets/:id"
+            element={
+              <ProtectedRoute>
+                <AssetDetail />
               </ProtectedRoute>
             }
           />
