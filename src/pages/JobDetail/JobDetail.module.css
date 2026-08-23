@@ -1,0 +1,26 @@
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.status {
+  color: #555;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.actions button {
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+
+.error {
+  color: #b00020;
+  margin-top: 1rem;
+}

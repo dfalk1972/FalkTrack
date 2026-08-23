@@ -30,7 +30,10 @@ export default function Login() {
       return;
     }
 
-    navigate("/");
+    // ProtectedRoute (wrapping /jobs) redirects to /pending on its own
+    // if this account turns out not to be active yet - safe to always
+    // send successful logins here.
+    navigate("/jobs");
   }
 
   return (

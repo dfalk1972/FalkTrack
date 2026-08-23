@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const authRoutes = require("./routes/authRoutes");
 const companiesRoutes = require("./routes/companiesRoutes");
+const jobsRoutes = require("./routes/jobsRoutes");
 const requireAuth = require("./middleware/authMiddleware");
 const requireProfile = require("./middleware/requireProfile");
 
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/companies", companiesRoutes);
+app.use("/api/jobs", jobsRoutes);
 
 app.get("/", (req, res) => {
   res.send("FalkTrack API running");
