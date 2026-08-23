@@ -1,0 +1,62 @@
+.container {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.error {
+  color: #b00020;
+  margin-bottom: 1rem;
+}
+
+.meta {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0;
+}
+
+.userList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.userCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.rejectButton {
+  color: #b00020;
+  border-color: #b00020;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+}

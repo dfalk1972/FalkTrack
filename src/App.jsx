@@ -7,6 +7,7 @@ import Jobs from "./pages/Jobs/Jobs";
 import JobDetail from "./pages/JobDetail/JobDetail";
 import Assets from "./pages/Assets/Assets";
 import AssetDetail from "./pages/AssetDetail/AssetDetail";
+import Admin from "./pages/Admin/Admin";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 
@@ -48,6 +49,14 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <AssetDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute adminOnly>
+                <Admin />
               </ProtectedRoute>
             }
           />

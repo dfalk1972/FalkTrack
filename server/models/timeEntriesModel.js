@@ -70,10 +70,32 @@ async function sumDurationsForJob(job_id) {
   return data.reduce((sum, entry) => sum + entry.duration_minutes, 0);
 }
 
+// Every time entry across the WHOLE company, for the admin panel's time
+// log view - not scoped to one job or one user like the functions above.
+// time_entries has no company_id column of its own, so the company scope
+// has to come through a join: jobs!inner(...) tells PostgREST "only
+// return rows whose related job actually exists", and .eq("jobs.company_id", ...)
+// filters on that joined row. This is the same company-scoping principle
+// as everywhere else in this app, just expressed through a join instead
+// of a plain column, because this table doesn't carry company_id directly.
+async function getAllForCompany(company_id) {
+  const { data, error } = await supabase
+    .from("time_entries")
+    .select(
+      "id, clock_in, clock_out, duration_minutes, jobs!inner(id, title, company_id), users!inner(id, full_name)"
+    )
+    .eq("jobs.company_id", company_id)
+    .order("clock_in", { ascending: false });
+
+  if (error) throw error;
+  return data;
+}
+
 module.exports = {
   getOpenEntry,
   getOpenEntriesForJob,
   clockIn,
   clockOut,
   sumDurationsForJob,
+  getAllForCompany,
 };
