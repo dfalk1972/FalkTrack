@@ -5,6 +5,22 @@ chosen, what was considered, and why. Newest entries at the top.
 
 ---
 
+## 2026-08-23 — Clarification: anon key vs. service_role key for login
+
+**Decision:** The frontend calls Supabase Auth's `signInWithPassword()`
+directly using the public `anon` key. Express does not proxy login.
+
+**Why:** The 2026-07-31 entry's "never exposed to the browser" language
+was written without distinguishing key types. The `anon` key is designed
+to be public in the browser — Supabase's real security boundary is RLS,
+not key secrecy. The `service_role` key remains server-side only, used
+by Express for everything else (jobs, assets, maintenance, admin
+approval). Express still verifies every request's JWT via auth
+middleware, so it remains the required controller layer — only the
+login handshake itself moved client-side.
+
+---
+
 ## 2026-07-31 — Deployment: Render over Railway for backend
 
 **Decision:** Use Render instead of Railway for hosting the
