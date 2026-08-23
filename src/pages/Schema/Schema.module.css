@@ -1,0 +1,28 @@
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.intro {
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.intro code {
+  background: #f2f2f2;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* max-width: 100% is what keeps this from overflowing on tablet/mobile -
+   the image scales down with the viewport instead of forcing horizontal
+   scroll. */
+.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}

@@ -49,6 +49,11 @@ export default function Admin() {
   }
 
   useEffect(() => {
+    // loadAll() setState()s as soon as it starts (setLoading(true)) -
+    // a newer lint rule flags that as a possible cascading-render smell,
+    // but this is the standard "fetch on mount" pattern and React
+    // batches it fine in practice.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadAll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -112,32 +117,39 @@ export default function Admin() {
         {timeLogs.length === 0 ? (
           <p>No time entries yet.</p>
         ) : (
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Worker</th>
-                <th>Job</th>
-                <th>Clock In</th>
-                <th>Clock Out</th>
-                <th>Duration</th>
-              </tr>
-            </thead>
-            <tbody>
-              {timeLogs.map((log) => (
-                <tr key={log.id}>
-                  <td>{log.worker_name}</td>
-                  <td>{log.job_title}</td>
-                  <td>{new Date(log.clock_in).toLocaleString()}</td>
-                  <td>
-                    {log.clock_out
-                      ? new Date(log.clock_out).toLocaleString()
-                      : "—"}
-                  </td>
-                  <td>{formatDuration(log.duration_minutes)}</td>
+          // Scrolls horizontally within its own box on narrow screens,
+          // instead of the table squeezing unreadably small or pushing
+          // the whole page wider than the viewport - responsiveness
+          // check for Phase 8 (this table has 5 columns of real content,
+          // the one place in the app most likely to overflow on mobile).
+          <div className={styles.tableWrap}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>Worker</th>
+                  <th>Job</th>
+                  <th>Clock In</th>
+                  <th>Clock Out</th>
+                  <th>Duration</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {timeLogs.map((log) => (
+                  <tr key={log.id}>
+                    <td>{log.worker_name}</td>
+                    <td>{log.job_title}</td>
+                    <td>{new Date(log.clock_in).toLocaleString()}</td>
+                    <td>
+                      {log.clock_out
+                        ? new Date(log.clock_out).toLocaleString()
+                        : "—"}
+                    </td>
+                    <td>{formatDuration(log.duration_minutes)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>

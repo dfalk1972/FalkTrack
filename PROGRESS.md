@@ -2,20 +2,38 @@
 
 ## Current Status
 
-_Last updated: 2026-08-20_
+_Last updated: 2026-08-23_
 
 **Done:**
 
-- Home page, docs, stack finalized (see above)
-- Step 4: Database ERD diagram created and committed
+- Phase 0: Home page, stack decisions, ERD, DECISIONS.md/PROGRESS.md tracking
+- Phase 1: Database — `01_schema.sql`, `02_rls.sql`, `03_seed.sql` run
+  against a live Supabase project, first admin bootstrapped
+- Phase 2: Express backend — scaffold, signup with rollback, JWT auth
+  middleware, company-scoped profile middleware
+- Phase 3: Auth screens — Login, Signup, Pending, Context API for
+  session/profile
+- Phase 4: Jobs — gallery, create, detail, start/stop timer, mark
+  complete with hour aggregation
+- Phase 5: Assets & Maintenance — gallery, detail, add maintenance
+  record (photo upload cut from scope, see DECISIONS.md)
+- Phase 6: Admin Panel — approve/reject pending users, company-wide
+  time logs
+- Phase 7: Testing — Vitest (React components), Mocha/Chai/Supertest/
+  Sinon (API endpoints and database models)
+- Phase 8: Presentation polish — in-app schema diagram, responsive
+  pass, README/DECISIONS.md accuracy pass
 
 **Next:**
 
-- Supabase project setup (in progress — project created,
-  password saved in Bitwarden)
-- Run 6-table schema SQL
-- Express backend scaffold
-- Auth: Login, Signup, Pending screen
+- Phase 9: Deployment — Vercel (frontend) + Render (backend)
+- Phase 10: Submission — PR from `dev` → `main`, left unmerged,
+  confirm all Completion-criterion documents are present
+
+_Older status notes below are left as-is from earlier in the project —
+the note about "Supabase project setup (in progress...)" refers to an
+earlier, since-abandoned Supabase project; a fresh one was created for
+the actual Phase 1 build._
 
 **Done:**
 
@@ -43,6 +61,16 @@ _Last updated: 2026-08-20_
 ## Session Log
 
 _(newest at top)_
+
+### 2026-08-23 — Phases 2 through 8: full build, fast
+
+Long single-day session. Built the database, the entire Express
+backend (auth, jobs, assets/maintenance, admin), the entire React
+frontend (all pages/routes/components), the test suite, and this
+round of presentation polish — schema diagram, responsive pass,
+documentation accuracy. Made a deliberate time-scoping call partway
+through (skip photo upload; see DECISIONS.md) to protect finishing the
+course. Deployment (Phase 9) and submission (Phase 10) still ahead.
 
 ### 2026-08-16 — Stack finalized, docs cleaned up
 

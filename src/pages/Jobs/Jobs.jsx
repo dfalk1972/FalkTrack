@@ -23,6 +23,11 @@ export default function Jobs() {
   }
 
   useEffect(() => {
+    // loadJobs() setState()s as soon as it starts (setLoading(true)) - a
+    // newer lint rule flags that as a possible cascading-render smell,
+    // but this is the standard "fetch on mount" pattern and React
+    // batches it fine in practice.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadJobs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

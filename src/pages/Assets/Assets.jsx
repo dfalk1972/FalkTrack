@@ -29,6 +29,11 @@ export default function Assets() {
   }
 
   useEffect(() => {
+    // loadAssets() setState()s as soon as it starts (setLoading(true)) -
+    // a newer lint rule flags that as a possible cascading-render smell,
+    // but this is the standard "fetch on mount" pattern and React
+    // batches it fine in practice.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadAssets();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

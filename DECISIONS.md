@@ -5,6 +5,43 @@ chosen, what was considered, and why. Newest entries at the top.
 
 ---
 
+## 2026-08-23 — Presentation: corrected schema diagram for the in-app Schema page
+
+**Decision:** The Schema page (`/schema`) displays a new diagram
+(`public/schema-diagram.png`), generated directly from
+`supabase/01_schema.sql`, instead of the original
+`diagrams/FalkTrack_ERD.png`.
+
+**Why:** Checking the original ERD against the actual, finalized
+schema turned up a mismatch — that file predates the schema being
+locked in (it has different table names, an extra `industries` table
+that was never built, and doesn't match the real six tables:
+`companies`, `users`, `assets`, `maintenance_records`, `jobs`,
+`time_entries`). Presenting a diagram that doesn't match the real
+database would be worse than not presenting one at all, so a corrected
+diagram was generated from the actual schema file rather than reusing
+the stale image. `diagrams/FalkTrack_ERD.png` is left in place as a
+historical record of the early design, not deleted.
+
+---
+
+## 2026-08-23 — Scope cut: skip maintenance record photo upload
+
+**Decision:** Maintenance records and assets don't include photo
+upload. `maintenance_records.photo_url` and `assets.thumbnail_url`
+stay unset — both columns are nullable in the schema, so nothing about
+the data model needed to change.
+
+**Why:** Time-scoping call made partway through the build, to protect
+finishing the course on schedule. Supabase Storage integration (upload
+UI, file handling, storage bucket policies) was real, non-trivial
+scope for a feature that isn't load-bearing for the core "track jobs
+and maintenance" functionality the app is graded on. Revisit if there's
+time after submission — the schema already supports it, so it's a
+pure addition, not a rework.
+
+---
+
 ## 2026-08-23 — Clarification: anon key vs. service_role key for login
 
 **Decision:** The frontend calls Supabase Auth's `signInWithPassword()`
@@ -54,6 +91,10 @@ maintenance record instead of Cloudinary.
 less third-party service to configure and manage, and simpler
 for a single photo use case. Cloudinary makes more sense at
 higher photo/video volume (V2 roadmap).
+
+**Superseded 2026-08-23** — photo upload itself was cut from scope
+(see above), so this decision no longer applies to what was actually
+built. Left here as a record of the original plan.
 
 ## 2026-06-21 — Git workflow: dev branch for active build, PR into main at submission
 
