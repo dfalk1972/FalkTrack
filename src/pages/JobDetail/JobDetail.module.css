@@ -1,0 +1,91 @@
+/* Same reasoning as Jobs.module.css - this page gets used standing in a
+   shop or outdoors, on a phone, so type is larger and the action buttons
+   are big enough to hit without looking carefully. */
+
+.container {
+  max-width: 600px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.container h1 {
+  font-size: 1.875rem;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+/* Description and the total-time line. */
+.container p {
+  margin-bottom: 0.75rem;
+  color: #35353d;
+}
+
+.status {
+  color: var(--color-ink);
+  font-size: 1.1875rem;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 0.875rem;
+  margin-top: 2rem;
+}
+
+.actions button {
+  flex: 1;
+  font-size: 1.125rem;
+  font-family: inherit;
+  font-weight: 700;
+  padding: 0.875rem 1.25rem;
+  /* Comfortably above the 44-48px minimum tap target, since this can get
+     pressed with gloves on. */
+  min-height: 54px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid var(--color-ink);
+}
+
+/* The two buttons are told apart by fill, not colour - a solid primary
+   and an outlined secondary. That stays legible in glare and doesn't
+   depend on colour vision. Order is fixed in JobDetail.jsx: the clock
+   in/out toggle is always first, Mark Complete always second. */
+.actions button:first-child {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+.actions button:last-child {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+.actions button:active {
+  opacity: 0.85;
+}
+
+.actions button:focus-visible {
+  outline: 3px solid var(--color-indigo);
+  outline-offset: 3px;
+}
+
+.error {
+  color: #a1001c;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Stack full-width on a phone. Side by side, each button ends up
+     narrow enough that a mis-tap is easy - and tapping Mark Complete
+     when you meant Clock Out is a genuinely annoying mistake to undo. */
+  .actions {
+    flex-direction: column;
+  }
+}

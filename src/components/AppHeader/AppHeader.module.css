@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  /* Lets the nav drop to a second line on narrow screens instead of
+     overflowing or squeezing links unreadably small - responsiveness
+     check for Phase 8. */
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.logoutButton {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 0.85rem;
+    font-size: 0.9rem;
+  }
+}

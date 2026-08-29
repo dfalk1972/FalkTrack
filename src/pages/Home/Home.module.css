@@ -1,0 +1,305 @@
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.headerInner {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.logoIcon {
+  color: var(--color-indigo);
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--color-indigo);
+}
+
+.signupButton {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--color-indigo);
+  text-decoration: none;
+}
+
+/* ── Hero ─────────────────────────────────────────── */
+
+.hero {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.heroBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-purple);
+  margin-bottom: 1rem;
+}
+
+.heroHeadline {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.heroSubtext {
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.7;
+  max-width: 28rem;
+  margin-bottom: 2rem;
+}
+
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.buttonPrimary {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--color-indigo);
+  text-decoration: none;
+}
+
+.buttonOutline {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-indigo);
+  background-color: transparent;
+  border: 2px solid var(--color-indigo);
+  text-decoration: none;
+}
+
+.heroMascot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mascotLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.mascotCard {
+  width: 100%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  color: #9ca3af;
+}
+
+.mascotPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.875rem;
+}
+
+.mascotCaption {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-top: 0.75rem;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .heroHeadline {
+    font-size: 2.5rem;
+  }
+}
+
+/* ── How it Works ────────────────────────────────────── */
+.howItWorks {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+.howItWorksInner {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+.sectionHeading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.sectionSubtext {
+  font-size: 1.125rem;
+  color: #374151;
+  text-align: center;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+}
+
+.stepIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.stepNumber {
+  color: white;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.stepBody {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Features ────────────────────────────────────── */
+
+.features {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.featuresInner {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.featureCard {
+  border: 1px solid #e5e5e5;
+  border-top: 4px solid #e5e5e5;
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.featureIconWrap {
+  margin-bottom: 1rem;
+}
+
+.featureTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.featureIconBody {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}
