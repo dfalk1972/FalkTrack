@@ -24,11 +24,11 @@ single responsive platform usable on desktop, tablet, or mobile.
 
 ### Demo Accounts
 
-| Role                      | Email                       | Password |
-| ------------------------- | --------------------------- | -------- |
-| Admin                     | `demoadmin@gmail.com`       | `123456` |
-| Worker — active           | `demo.worker@falktrack.com` | `123456` |
-| Worker — pending approval | `demo.worker2@gmail.com`    | `123456` |
+| Role                      | Email                       | Password    |
+| ------------------------- | --------------------------- | ----------- |
+| Admin                     | `demoadmin@gmail.com`       | `123456`    |
+| Worker — active           | `demo.worker@falktrack.com` | `123456789` |
+| Worker — pending approval | `demo.worker2@gmail.com`    | `123456789` |
 
 The third account is deliberately left **pending** so the admin approval
 flow can be exercised end to end: log in as the admin, open the Admin
