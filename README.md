@@ -13,41 +13,58 @@ single responsive platform usable on desktop, tablet, or mobile.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-🚧 In Development — [falktrack.com](https://falktrack.com)
+**[falk-track.vercel.app](https://falk-track.vercel.app)**
+
+> ⏱️ **First load may be slow.** The API is hosted on Render's free tier,
+> which sleeps after 15 minutes of inactivity and takes 30–60 seconds to
+> wake. If the login screen or the company dropdown looks empty on the
+> very first visit, give it a moment and refresh.
+
+### Demo Accounts
+
+| Role                      | Email                       | Password |
+| ------------------------- | --------------------------- | -------- |
+| Admin                     | `demoadmin@gmail.com`       | `123456` |
+| Worker — active           | `demo.worker@falktrack.com` | `123456` |
+| Worker — pending approval | `demo.worker2@gmail.com`    | `123456` |
+
+The third account is deliberately left **pending** so the admin approval
+flow can be exercised end to end: log in as the admin, open the Admin
+panel, and approve or reject it.
 
 ---
 
-## 📋 Features
+## Features
 
-- 🔐 **Company-Scoped Registration & Login** — email/password auth via Supabase, every account tied to one company
-- ✅ **Admin User Approval** — new accounts start `pending` and need an admin to activate them before they can use the app
-- 👷 **Role-Based Access** — Admin and Worker roles with different permissions, enforced both in the UI and on every API route
-- 📋 **Jobs Gallery & Job Detail** — create and manage jobs with full detail pages
-- ⏱️ **Start/Stop Timer** — clock in/out on a job, one open timer per worker per job
-- 🔢 **Hour Aggregation** — total hours auto-calculated across every worker once a job is marked complete
-- 🚜 **Asset Registry** — gallery of company assets (name, asset number, category, make/model/year)
-- 🔧 **Maintenance Records** — log maintenance history per asset with type, notes, cost, and next due date
-- 🛠️ **Admin Panel** — approve/reject pending users, view company-wide time logs across every worker and job
-- 📐 **In-App Schema Diagram** — the live database schema, viewable from inside the app
+- **Company-Scoped Registration & Login** — email/password auth via Supabase, every account tied to one company
+- **Admin User Approval** — new accounts start `pending` and need an admin to activate them before they can use the app
+- **Role-Based Access** — Admin and Worker roles with different permissions, enforced both in the UI and on every API route
+- **Jobs Gallery & Job Detail** — create and manage jobs with full detail pages
+- **Start/Stop Timer** — clock in/out on a job, one open timer per worker per job
+- **Hour Aggregation** — total hours auto-calculated across every worker once a job is marked complete
+- **Asset Registry** — gallery of company assets (name, asset number, category, make/model/year)
+- **Maintenance Records** — log maintenance history per asset with type, notes, cost, and next due date
+- **Admin Panel** — approve/reject pending users, view company-wide time logs across every worker and job
+- **In-App Schema Diagram** — the live database schema, viewable from inside the app
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Layer            | Technology                                |
-| ---------------- | ------------------------------------------ |
-| Frontend         | React 19, Vite, CSS Modules, React Router v7 |
-| State Management | React Context API                         |
-| Backend          | Node.js, Express                          |
-| Database         | Supabase (PostgreSQL), accessed via `@supabase/supabase-js` |
+| Layer            | Technology                                                                            |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| Frontend         | React 19, Vite, CSS Modules, React Router v7                                          |
+| State Management | React Context API                                                                     |
+| Backend          | Node.js, Express                                                                      |
+| Database         | Supabase (PostgreSQL), accessed via `@supabase/supabase-js`                           |
 | Testing          | Vitest + React Testing Library (frontend), Mocha + Chai + Supertest + Sinon (backend) |
-| Deployment       | Vercel (frontend), Render (backend)       |
+| Deployment       | Vercel (frontend), Render (backend)                                                   |
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 React (Vercel) → Express (Render) → Supabase (PostgreSQL)
 
@@ -61,7 +78,7 @@ choices made along the way.
 
 ---
 
-## 🖥️ Running Locally
+## Running Locally
 
 FalkTrack is two separate Node projects in one repo: the React
 frontend at the root, and the Express backend in `server/`.
