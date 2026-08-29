@@ -30,8 +30,6 @@ async function create({
   return data;
 }
 
-// Same scoped-lookup pattern as jobsModel.getById - the company_id
-// filter here is the real security boundary, not RLS.
 async function getById({ id, company_id }) {
   const { data, error } = await supabase
     .from("assets")

@@ -46,8 +46,7 @@ async function getJob(req, res) {
 
     return res.status(200).json({ job, myOpenEntry });
   } catch (err) {
-    // getById throws if no row matched - either a bad id, or (this
-    // matters) a real job id that belongs to a DIFFERENT company. Either
+    // getById throws if no row matched - either a bad id, or a real job id that belongs to a DIFFERENT company. Either
     // way, respond 404, not a more specific error - don't reveal whether
     // the job exists for someone else.
     return res.status(404).json({ error: "Job not found" });
@@ -156,4 +155,11 @@ async function completeJob(req, res) {
   }
 }
 
-module.exports = { listJobs, createJob, getJob, clockIn, clockOut, completeJob };
+module.exports = {
+  listJobs,
+  createJob,
+  getJob,
+  clockIn,
+  clockOut,
+  completeJob,
+};

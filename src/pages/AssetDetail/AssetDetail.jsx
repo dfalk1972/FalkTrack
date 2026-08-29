@@ -20,9 +20,12 @@ export default function AssetDetail() {
 
   async function loadAsset() {
     setLoading(true);
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/assets/${id}`, {
-      headers: { Authorization: `Bearer ${session.access_token}` },
-    });
+    const res = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/assets/${id}`,
+      {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      },
+    );
     const data = await res.json();
 
     if (res.ok) {
@@ -34,13 +37,7 @@ export default function AssetDetail() {
   }
 
   useEffect(() => {
-    // loadAsset() setState()s as soon as it starts (setLoading(true)) -
-    // a newer lint rule flags that as a possible cascading-render smell,
-    // but this is the standard "fetch on mount" pattern and React
-    // batches it fine in practice.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadAsset();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   function updateField(field, value) {
@@ -64,7 +61,7 @@ export default function AssetDetail() {
           cost: Number(form.cost),
           next_due_date: form.next_due_date || null,
         }),
-      }
+      },
     );
 
     const data = await res.json();
@@ -87,8 +84,8 @@ export default function AssetDetail() {
       <div className={styles.container}>
         <h1>{asset.name}</h1>
         <p className={styles.meta}>
-          #{asset.asset_number} · {asset.category} · {asset.make}{" "}
-          {asset.model} ({asset.year})
+          #{asset.asset_number} · {asset.category} · {asset.make} {asset.model}{" "}
+          ({asset.year})
         </p>
 
         <h2>Add Maintenance Record</h2>

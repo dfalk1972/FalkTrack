@@ -4,11 +4,6 @@ const proxyquire = require("proxyquire");
 
 function loadRequireProfile(fakeUsersModel) {
   return proxyquire("../../middleware/requireProfile", {
-    // @noCallThru stops proxyquire from also loading the REAL
-    // usersModel (and through it, the real Supabase client) to fill in
-    // anything this fake doesn't define - without it, requiring the
-    // real config/supabaseClient.js throws in a test environment with
-    // no .env file.
     "../models/usersModel": { ...fakeUsersModel, "@noCallThru": true },
   });
 }
@@ -56,7 +51,8 @@ describe("requireProfile", () => {
 
     expect(next.called).to.be.false;
     expect(res.status.calledWith(403)).to.be.true;
-    expect(res.json.calledWith({ error: "Account pending approval" })).to.be.true;
+    expect(res.json.calledWith({ error: "Account pending approval" })).to.be
+      .true;
   });
 
   it("responds 403 when the profile lookup itself fails", async () => {

@@ -1,4 +1,4 @@
-# 🔧 FalkTrack
+# FalkTrack
 
 ### Asset & Job Management Platform for Field Operations
 
@@ -17,7 +17,7 @@ single responsive platform usable on desktop, tablet, or mobile.
 
 **[falk-track.vercel.app](https://falk-track.vercel.app)**
 
-> ⏱️ **First load may be slow.** The API is hosted on Render's free tier,
+> **First load may be slow.** The API is hosted on Render's free tier,
 > which sleeps after 15 minutes of inactivity and takes 30–60 seconds to
 > wake. If the login screen or the company dropdown looks empty on the
 > very first visit, give it a moment and refresh.
@@ -157,7 +157,7 @@ database layer is faked for testing.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── src/                  # React frontend

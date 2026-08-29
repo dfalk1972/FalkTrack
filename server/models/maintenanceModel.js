@@ -11,8 +11,7 @@ async function getForAsset(asset_id) {
   return data;
 }
 
-// photo_url intentionally never set here - deferred (see plan.md /
-// build-state.md); the column is nullable so this is a complete,
+// photo_url intentionally never set here - deferred the column is nullable so this is a complete,
 // working feature without it.
 async function create({
   asset_id,

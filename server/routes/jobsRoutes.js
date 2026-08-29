@@ -4,10 +4,6 @@ const requireAuth = require("../middleware/authMiddleware");
 const requireProfile = require("../middleware/requireProfile");
 const jobsController = require("../controllers/jobsController");
 
-// router.use() applies both middlewares to EVERY route defined below on
-// this router - same effect as repeating "requireAuth, requireProfile"
-// on each line, just written once. Every job route needs a logged-in,
-// active, company-known user.
 router.use(requireAuth, requireProfile);
 
 router.get("/", jobsController.listJobs);

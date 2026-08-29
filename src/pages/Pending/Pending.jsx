@@ -4,8 +4,7 @@ import styles from "./Pending.module.css";
 
 // Shown to anyone who's logged in but not yet an active user - either
 // still status: "pending" (normal, waiting on admin approval) or
-// status: "rejected" (same holding page for now; the message is close
-// enough for either case at MVP scope).
+// status: "rejected" (same holding page for now; will change later).
 export default function Pending() {
   const { logout } = useAuth();
   const navigate = useNavigate();

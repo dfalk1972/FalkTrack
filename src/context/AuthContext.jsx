@@ -13,8 +13,7 @@ export function AuthProvider({ children }) {
   // mount we genuinely don't know yet. Restoring a persisted session
   // from localStorage is asynchronous, so `session` still being null
   // at that point does NOT mean "logged out," it means "haven't
-  // checked yet." See the bug note below the listener - conflating
-  // those two was a real bug (bug #1 below).
+  // checked yet." See the bug note below the listener.
   const [sessionLoading, setSessionLoading] = useState(true);
   const [profile, setProfile] = useState(null);
   const [profileLoading, setProfileLoading] = useState(false);
@@ -61,7 +60,7 @@ export function AuthProvider({ children }) {
         if (newSession) {
           setProfileLoading(true);
         }
-      }
+      },
     );
 
     return () => listener.subscription.unsubscribe();

@@ -6,17 +6,17 @@ _Last updated: 2026-08-23_
 
 **Done:**
 
-- Phase 0: Home page, stack decisions, ERD, DECISIONS.md/PROGRESS.md tracking
+- Phase 0: Home page, stack decisions, ERD, PROGRESS.md tracking
 - Phase 1: Database — `01_schema.sql`, `02_rls.sql`, `03_seed.sql` run
   against a live Supabase project, first admin bootstrapped
 - Phase 2: Express backend — scaffold, signup with rollback, JWT auth
   middleware, company-scoped profile middleware
-- Phase 3: Auth screens — Login, Signup, Pending, Context API for
+- Phase 3: Auth screens — Login, Signup, Pending, Context API for[text](PROGRESS.md)
   session/profile
 - Phase 4: Jobs — gallery, create, detail, start/stop timer, mark
   complete with hour aggregation
 - Phase 5: Assets & Maintenance — gallery, detail, add maintenance
-  record (photo upload cut from scope, see DECISIONS.md)
+  record (photo upload cut from scope)
 - Phase 6: Admin Panel — approve/reject pending users, company-wide
   time logs
 - Phase 7: Testing — Vitest (React components), Mocha/Chai/Supertest/

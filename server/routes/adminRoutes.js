@@ -5,8 +5,7 @@ const requireProfile = require("../middleware/requireProfile");
 const requireAdmin = require("../middleware/requireAdmin");
 const adminController = require("../controllers/adminController");
 
-// Same chained-middleware pattern as jobsRoutes/assetsRoutes, plus a
-// third gate: requireAdmin. Order matters - requireAdmin reads
+// Order matters - requireAdmin reads
 // req.profile.role, which requireProfile is what sets, so it has to run
 // after it.
 router.use(requireAuth, requireProfile, requireAdmin);

@@ -6,10 +6,6 @@ const proxyquire = require("proxyquire");
 
 function loadAuthController({ supabase, usersModel = {} } = {}) {
   return proxyquire("../../controllers/authController", {
-    // @noCallThru - see jobsController.test.js for why this matters:
-    // without it, proxyquire still loads the REAL supabaseClient.js
-    // (which needs real env vars) to fill in anything the fake didn't
-    // define.
     "../config/supabaseClient": { ...supabase, "@noCallThru": true },
     "../models/usersModel": { ...usersModel, "@noCallThru": true },
   });
@@ -40,7 +36,9 @@ function makeFakeAuthAdmin({ createUserResult, deleteUserStub } = {}) {
 
 describe("authController.signup", () => {
   it("responds 400 when required fields are missing", async () => {
-    const authController = loadAuthController({ supabase: makeFakeAuthAdmin() });
+    const authController = loadAuthController({
+      supabase: makeFakeAuthAdmin(),
+    });
     const app = buildTestApp(authController);
 
     const res = await request(app)
@@ -56,7 +54,11 @@ describe("authController.signup", () => {
     });
     const createProfileStub = sinon
       .stub()
-      .resolves({ id: "auth-user-1", full_name: "Test Worker", status: "pending" });
+      .resolves({
+        id: "auth-user-1",
+        full_name: "Test Worker",
+        status: "pending",
+      });
     const authController = loadAuthController({
       supabase,
       usersModel: { createProfile: createProfileStub },
@@ -78,7 +80,7 @@ describe("authController.signup", () => {
         company_id: "co-1",
         full_name: "Test Worker",
         email: "test@example.com",
-      })
+      }),
     ).to.be.true;
   });
 

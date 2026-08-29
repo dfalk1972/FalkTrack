@@ -2,9 +2,6 @@ const { expect } = require("chai");
 const proxyquire = require("proxyquire");
 const { makeFakeSupabase } = require("../helpers/fakeSupabase");
 
-// proxyquire lets us load usersModel.js with a fake standing in for its
-// "../config/supabaseClient" require, instead of the real Supabase
-// client - so these tests run offline, fast, and the same every time.
 function loadUsersModel(fakeSupabase) {
   return proxyquire("../../models/usersModel", {
     "../config/supabaseClient": fakeSupabase,
@@ -52,7 +49,7 @@ describe("usersModel", () => {
   describe("updateStatus", () => {
     it("scopes the update by BOTH id and company_id", async () => {
       // This is the actual multi-tenancy security boundary the whole
-      // app relies on (see build-state.md) - an admin approving/
+      // app relies on - an admin approving/
       // rejecting a user must only ever be able to touch a user in
       // their OWN company. If this ever regresses to filtering by id
       // alone, this test should fail.

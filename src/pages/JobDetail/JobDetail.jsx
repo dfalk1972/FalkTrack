@@ -28,13 +28,7 @@ export default function JobDetail() {
   }
 
   useEffect(() => {
-    // loadJob() setState()s as soon as it starts (setLoading(true)) - a
-    // newer lint rule flags that as a possible cascading-render smell,
-    // but this is the standard "fetch on mount" pattern and React
-    // batches it fine in practice.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadJob();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   async function callAction(action) {
@@ -45,7 +39,7 @@ export default function JobDetail() {
       {
         method: "POST",
         headers: { Authorization: `Bearer ${session.access_token}` },
-      }
+      },
     );
 
     const data = await res.json();
@@ -75,13 +69,9 @@ export default function JobDetail() {
         {job.status !== "completed" && (
           <div className={styles.actions}>
             {myOpenEntry ? (
-              <button onClick={() => callAction("clock-out")}>
-                Clock Out
-              </button>
+              <button onClick={() => callAction("clock-out")}>Clock Out</button>
             ) : (
-              <button onClick={() => callAction("clock-in")}>
-                Clock In
-              </button>
+              <button onClick={() => callAction("clock-in")}>Clock In</button>
             )}
             <button onClick={() => callAction("complete")}>
               Mark Complete

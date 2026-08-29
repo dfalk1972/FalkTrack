@@ -10,11 +10,14 @@ function loadTimeEntriesModel(fakeSupabase) {
 
 describe("timeEntriesModel", () => {
   describe("sumDurationsForJob", () => {
-    // This is the actual "hour aggregation" rubric feature - worth
-    // testing the math directly, not just that a query got sent.
+    // This is the actual "hour aggregation"
     it("adds up duration_minutes across every completed entry", async () => {
       const fakeSupabase = makeFakeSupabase({
-        data: [{ duration_minutes: 30 }, { duration_minutes: 90 }, { duration_minutes: 15 }],
+        data: [
+          { duration_minutes: 30 },
+          { duration_minutes: 90 },
+          { duration_minutes: 15 },
+        ],
         error: null,
       });
       const timeEntriesModel = loadTimeEntriesModel(fakeSupabase);
@@ -37,8 +40,8 @@ describe("timeEntriesModel", () => {
   describe("getOpenEntry", () => {
     it("returns null (not an error) when nobody has an open timer", async () => {
       // maybeSingle() is used here specifically because "no open entry"
-      // is a normal outcome, not an error case - this test locks that
-      // behavior in.
+      // is a normal outcome
+
       const fakeSupabase = makeFakeSupabase({ data: null, error: null });
       const timeEntriesModel = loadTimeEntriesModel(fakeSupabase);
 

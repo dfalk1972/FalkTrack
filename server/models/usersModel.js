@@ -26,9 +26,7 @@ async function getProfile({ id }) {
   return data;
 }
 
-// Everyone in this company still waiting on admin approval. Company-
-// scoped, same as every other list query in this app - an admin should
-// only ever see their own company's pending workers.
+// Everyone in this company still waiting on admin approval.
 async function getPendingForCompany(company_id) {
   const { data, error } = await supabase
     .from("users")
@@ -41,11 +39,6 @@ async function getPendingForCompany(company_id) {
   return data;
 }
 
-// Company-scoped status update - this IS the security boundary here,
-// same pattern as jobsModel.updateStatus. Without the company_id filter
-// an admin could approve/reject a user in a DIFFERENT company just by
-// guessing a user id. If the id/company_id pair doesn't match a row,
-// .single() throws and the controller turns that into a 404.
 async function updateStatus({ id, company_id, status }) {
   const { data, error } = await supabase
     .from("users")

@@ -22,9 +22,9 @@ async function create({ company_id, title, description }) {
   return data;
 }
 
-// Scoped lookup - only returns the job if it belongs to this company.
+// Only returns the job if it belongs to this company.
 // This IS the security boundary for jobs, since RLS doesn't apply to
-// anything Express queries (see requireProfile.js). Every job lookup
+// anything Express queries. Every job lookup
 // anywhere in this app should go through this function, never a plain
 // "select by id" with no company_id filter.
 async function getById({ id, company_id }) {
