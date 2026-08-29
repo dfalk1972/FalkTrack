@@ -11,8 +11,7 @@ _Last updated: 2026-08-23_
   against a live Supabase project, first admin bootstrapped
 - Phase 2: Express backend — scaffold, signup with rollback, JWT auth
   middleware, company-scoped profile middleware
-- Phase 3: Auth screens — Login, Signup, Pending, Context API for[text](PROGRESS.md)
-  session/profile
+- Phase 3: Auth screens — Login, Signup, Pending,
 - Phase 4: Jobs — gallery, create, detail, start/stop timer, mark
   complete with hour aggregation
 - Phase 5: Assets & Maintenance — gallery, detail, add maintenance
@@ -22,7 +21,7 @@ _Last updated: 2026-08-23_
 - Phase 7: Testing — Vitest (React components), Mocha/Chai/Supertest/
   Sinon (API endpoints and database models)
 - Phase 8: Presentation polish — in-app schema diagram, responsive
-  pass, README/DECISIONS.md accuracy pass
+  pass
 
 **Next:**
 
@@ -30,24 +29,14 @@ _Last updated: 2026-08-23_
 - Phase 10: Submission — PR from `dev` → `main`, left unmerged,
   confirm all Completion-criterion documents are present
 
-_Older status notes below are left as-is from earlier in the project —
-the note about "Supabase project setup (in progress...)" refers to an
-earlier, since-abandoned Supabase project; a fresh one was created for
-the actual Phase 1 build._
-
 **Done:**
 
 - Full project scaffold, routing, global CSS tokens
 - Home page complete (nav, hero with dog photo, how it works,
   features, CTA banner, footer)
-- DECISIONS.md and PROGRESS.md tracking choices and reasoning
+- PROGRESS.md tracking choices and reasoning
 - Proposal scaled back to v4 — 6 tables, ~39 hour scope,
   stretch goals moved to Section 8 V2 roadmap
-- Multi-tenancy and relational database concepts documented
-  in DECISIONS.md
-- Stack finalized against rubric — Render over Railway,
-  Supabase Storage over Cloudinary
-- DECISIONS.md updated to reflect v4 six-table schema
 
 **Next:**
 
@@ -60,25 +49,15 @@ the actual Phase 1 build._
 
 ## Session Log
 
-_(newest at top)_
-
-### 2026-08-23 — Phases 2 through 8: full build, fast
+### 2026-08-23 — Phases 2 through 8: full build
 
 Long single-day session. Built the database, the entire Express
 backend (auth, jobs, assets/maintenance, admin), the entire React
 frontend (all pages/routes/components), the test suite, and this
 round of presentation polish — schema diagram, responsive pass,
 documentation accuracy. Made a deliberate time-scoping call partway
-through (skip photo upload; see DECISIONS.md) to protect finishing the
+through (skip photo upload;) to protect finishing the
 course. Deployment (Phase 9) and submission (Phase 10) still ahead.
-
-### 2026-08-16 — Stack finalized, docs cleaned up
-
-Confirmed final stack against rubric with mentor feedback.
-Swapped Railway for Render, Cloudinary for Supabase Storage.
-Updated DECISIONS.md multi-tenancy section to match v4
-six-table schema. Cleaned up PROGRESS.md. Ready for database
-ERD and backend build.
 
 ### 2026-06-24 — Home page complete
 
